@@ -1,0 +1,14 @@
+http://* {
+    redir https://{host}{uri}
+}
+
+https://steamcommunity.com, https://www.steamcommunity.com, https://store.steampowered.com, https://api.steampowered.com {
+    tls unblock.crt unblock.key
+    proxy / https://steamuserimages-a.akamaihd.net https://steamcdn-a.akamaihd.net https://steamstore-a.akamaihd.net https://steamcommunity-a.akamaihd.net https://steampipe.akamaized.net https://origin-a.akamaihd.net https://blzddist1-a.akamaihd.net https://blzddistkr1-a.akamaihd.net https://eaassets-a.akamaihd.net https://humblebundle-a.akamaihd.net https://steamcommunity-a.akamaihd.net {
+        policy random
+        fail_timeout 5s
+        timeout 30s
+        transparent
+        header_upstream Host {host}
+    }
+}
