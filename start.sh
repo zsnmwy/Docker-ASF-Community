@@ -51,4 +51,4 @@ curl https://steamcommunity.com
 cd /app || exit
 
 
-/app/ArchiSteamFarm --no-restart --process-required --system-required
+bash /app/ArchiSteamFarm.sh --no-restart --process-required --system-required
