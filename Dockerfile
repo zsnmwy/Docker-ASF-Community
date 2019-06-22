@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/runtime:3.0-alpine-arm64v8
+FROM mcr.microsoft.com/dotnet/core/runtime:3.0-alpine
 WORKDIR /app
 COPY Caddyfile /app/caddy/
 COPY start.sh /app
