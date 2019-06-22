@@ -11,6 +11,6 @@ RUN apk add --no-cache curl expect p7zip bash openssl ca-certificates libcurl ic
     curl https://getcaddy.com | bash -s personal hook.service && \
     caddy -service install -agree -conf /app/caddy/Caddyfile && \
     chmod a+x /app/start.sh && \
-    chmod a+x /app/ArchiSteamFarm.sh
+    chmod a+x /app/ArchiSteamFarm.sh && \
     apk del p7zip curl
 ENTRYPOINT ["/app/start.sh"]
