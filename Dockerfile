@@ -13,5 +13,6 @@ RUN apk add --no-cache curl expect p7zip bash openssl ca-certificates libcurl ic
     chmod a+x /app/start.sh && \
     chmod a+x /app/ArchiSteamFarm.sh && \
     apk del p7zip curl && \
-    rm -r /var/cache/apk && rm -r /usr/share/man
+    rm -r /var/cache/apk && \
+    rm -r /usr/share/man
 CMD ["/bin/bash", "/app/start.sh"]

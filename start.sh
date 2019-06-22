@@ -1,13 +1,8 @@
 #!/bin/bash
-
-
-echo '127.0.0.1       steamcommunity.com' >> /etc/hosts
-echo '127.0.0.1       www.steamcommunity.com' >> /etc/hosts
-
+echo '127.0.0.1       steamcommunity.com www.steamcommunity.com' >> /etc/hosts
 cat /etc/hosts
 
 ls -la /app/openssl
-
 cd /app/openssl/CA || exit
 
 mkdir newcerts
@@ -38,17 +33,10 @@ mkdir -p /etc/ssl/certs/
 
 cp /app/openssl/CA/Unblock/cacert.pem /etc/ssl/certs/
 cat /app/openssl/CA/Unblock/cacert.pem >> /etc/ssl/certs/ca-certificates.crt
-#update-ca-certificates
 
 cd /app/caddy || exit
-
 caddy &
-
-
-
 curl https://steamcommunity.com
-
 cd /app || exit
-
 
 bash /app/ArchiSteamFarm.sh --no-restart --process-required --system-required
